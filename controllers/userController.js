@@ -1,5 +1,6 @@
 const User = require('../models/userModel')
 const bcrypt = require('bcrypt')
+const data = require("../mock")
 
 module.exports.register = async (req, res, next) => {
     try {
@@ -90,7 +91,7 @@ module.exports.getAllUsers = async (req, res, next) => {
 
 module.exports.getUser = async (req, res, next) => {
     try {
-        return res.json("get data success")
+        return res.json(data)
     } catch (error) {
         next(error);
     }
