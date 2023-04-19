@@ -6,6 +6,7 @@ const socket = require("socket.io");
 const http = require("http");
 const userRouters = require('./routers/userRouter')
 const messagesRouters = require('./routers/messageRouter')
+const data = require("./mock");
 
 dotenv.config();
 const db = require("./config/db");
@@ -31,7 +32,7 @@ app.use("/api/auth", userRouters);
 app.use("/api/messages", messagesRouters);
 
 app.get("/", (req, res) => {
-  res.json("server running ...");
+  res.json(data);
 })
 
 server.listen(process.env.PORT || 8080, () => {
